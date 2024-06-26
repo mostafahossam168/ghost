@@ -1,0 +1,1056 @@
+{
+	"info": {
+		"_postman_id": "3337d0e5-75df-4894-b72e-9a96feb5315f",
+		"name": "Ghost",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27531280",
+		"_collection_link": "https://bold-sunset-510858.postman.co/workspace/Team-Workspace~742d5841-2b3d-4bd3-8804-e54c52329bf9/collection/27531280-3337d0e5-75df-4894-b72e-9a96feb5315f?action=share&source=collection_link&creator=27531280"
+	},
+	"item": [
+		{
+			"name": "services",
+			"item": [
+				{
+					"name": "Search",
+					"item": [
+						{
+							"name": "Search",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/services/search/query?search=voluptatum",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"services",
+										"search",
+										"query"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "voluptatum"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search?duration=30",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/services/search/query?duration=30",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"services",
+										"search",
+										"query"
+									],
+									"query": [
+										{
+											"key": "duration",
+											"value": "30"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search?min_price=50&max_price=100",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/services/search/query?min_price=50&max_price=100\n",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"services",
+										"search",
+										"query"
+									],
+									"query": [
+										{
+											"key": "min_price",
+											"value": "50"
+										},
+										{
+											"key": "max_price",
+											"value": "100\n"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "search?min_price=50&max_price=100",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/services/search/query?min_price=50&max_price=100",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"services",
+										"search",
+										"query"
+									],
+									"query": [
+										{
+											"key": "min_price",
+											"value": "50"
+										},
+										{
+											"key": "max_price",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "sort_by=price&sort_direction=desc",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/services/search/query?sort_by=price&sort_direction=desc",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"services",
+										"search",
+										"query"
+									],
+									"query": [
+										{
+											"key": "sort_by",
+											"value": "price"
+										},
+										{
+											"key": "sort_direction",
+											"value": "desc"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "services",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/services",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "services/book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"service_id\": 1,\n  \"user_id\": 1,\n  \"scheduled_date\": \"2024-12-30T10:00:00\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/services/book",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"services",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "services/insert",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Service 1\",\n  \"description\": \"Description for Service 1\",\n  \"duration\": 60,\n  \"price\": 100.00\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/services/insert",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"services",
+								"insert"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Mostafa",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "1064564850",
+									"type": "text"
+								},
+								{
+									"key": "country_code",
+									"value": "+20",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_url}}/api/register",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "(947) 398-2487",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_url}}/api/login/initiate",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"login",
+								"initiate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify-otp",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "otp",
+									"value": "0000",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "1064564850",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_url}}/api/login/verify-otp",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"login",
+								"verify-otp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Settings",
+			"item": [
+				{
+					"name": "user/bookings",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n  {\n    \"service_name\": \"خدمة ١\",\n    \"booking_date\": \"2024-02-15\",\n    \"status\": \"Completed\"\n  },\n  {\n    \"service_name\": \"خدمة ٢\",\n    \"booking_date\": \"2024-01-10\",\n    \"status\": \"Scheduled\"\n  }\n]\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/bookings",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"bookings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/settings",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"notifications\": {\n    \"email\": true,\n    \"sms\": false\n  },\n  \"privacy\": {\n    \"profile_visibility\": \"Friends\",\n    \"last_seen\": \"Nobody\"\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/profile-setting",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"profile-setting"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/setting",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"notifications\": {\n    \"email\": true,\n    \"sms\": false\n  },\n  \"privacy\": {\n    \"profile_visibility\": \"Friends\",\n    \"last_seen\": \"Nobody\"\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/profile-setting/update",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"profile-setting",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "support/faqs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"success\",\n    \"message\": \"Support query submitted successfully.\",\n    \"query\": {\n        \"id\": 123,\n        \"user_id\": 456,\n        \"subject\": \"Issue with Booking\",\n        \"description\": \"I am facing an issue with my recent booking...\",\n        \"submitted_at\": \"2024-03-01T12:00:00Z\"\n    }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/support/faqs",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"support",
+								"faqs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"علي أحمد\",\n  \"phone\": \"966506977241+\",\n  \"profile_picture\": \"/path/to/profile.jpg\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/user/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user update profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/user/profile",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "add new review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "service_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "rating",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "comment",
+									"value": "test comment",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/api/new-review",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"new-review"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get service reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/services/1/reviews",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"services",
+								"1",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/services/review/delete/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"services",
+								"review",
+								"delete",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payments",
+			"item": [
+				{
+					"name": "payment/process",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"card_number\": \"4242424242424242\",\n  \"expiry_month\": \"12\",\n  \"expiry_year\": \"2024\",\n  \"cvv\": \"123\",\n  \"amount\": \"100.00\"\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/payment/process",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"payment",
+								"process"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "coupon",
+			"item": [
+				{
+					"name": "oupons/apply",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"code\": \"test50\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/coupons/apply",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"coupons",
+								"apply"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "scooters",
+			"item": [
+				{
+					"name": "scooters",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_url}}/api/scooters?imei=1",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"scooters"
+							],
+							"query": [
+								{
+									"key": "imei",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local_url}}/api/scooters/refresh?imei=1",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"scooters",
+								"refresh"
+							],
+							"query": [
+								{
+									"key": "imei",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-control-info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "electronic_lock",
+									"value": "LOCK_STATUS_UNLOCK",
+									"type": "text"
+								},
+								{
+									"key": "cable_lock_control",
+									"value": "LOCK_STATUS_LOCK",
+									"type": "text"
+								},
+								{
+									"key": "battery_lock_control",
+									"value": "LOCK_STATUS_LOCK",
+									"type": "text"
+								},
+								{
+									"key": "tail_light_control",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "electronic_fence",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "speed_mode",
+									"value": "SPEED_MODE_1",
+									"type": "text"
+								},
+								{
+									"key": "starting_mode",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "speed_button_switch",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "led_button",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "cruise_control",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "front_lights_control",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local_url}}/api/scooters/update-control-info/1",
+							"host": [
+								"{{local_url}}"
+							],
+							"path": [
+								"api",
+								"scooters",
+								"update-control-info",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://dashboard.ghost-ksa.com",
+			"type": "string"
+		},
+		{
+			"key": "local_url",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		},
+		{
+			"key": "website_url\n",
+			"value": "https://dashboard.ghost-ksa.com",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "1|EAu0389U8wv9UJR6OVeLcOpVa29VU6i9uOYxD46zaad4d593",
+			"type": "string"
+		}
+	]
+}
